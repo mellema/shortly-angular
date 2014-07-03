@@ -1,11 +1,21 @@
-<div id='container' ng-controller = 'ShortenController'>
-<!-- Your code here -->
-  <h1>Enter a link:</h1>
-  <form name="addalink" ng-submit='addLink()'>
-    <input type='text'ng-model='link.url'>
-    <button>Shorten</button>
-  </form>
 
+
+<div id='container'>
+<!-- Your code here -->
+  <form ng-submit="addLink()">
+    <input type="url" ng-model="link.url" placeholder="New URL" required>
+    <button type="submit">Shorten</button>
+  </form>
+  <div ng-show="loading">
+    <img src="assets/spiffygif_46x46.gif" />
+  </div>
+  <span style="color:red;" ng-show="ShowError">{{ShowError}}</span>
+  <ul class="list-group" ng-show="newLink">
+    <li class="list-group-item">
+      <div>{{newLink.title}} </div>
+      <a ng-click="addVisit(link)" href="{{newLink.base_url}}/api/links/{{newLink.code}}">{{newLink.base_url}}/{{newLink.code}} </a>
+    </li>
+  </ul>
 </div>
 
 

@@ -27,11 +27,11 @@ angular.module('shortly', [
 
     // Your code here
     .otherwise({
-      redirectTo: '/signup'
+      redirectTo: '/signin'
     });
     // We add our $httpInterceptor into the array
     // of interceptors. Think of it like middleware for your ajax calls
-    $httpProvider.interceptors.push('AttatchTokens');
+  $httpProvider.interceptors.push('AttatchTokens');
 })
 .factory('AttatchTokens', function ($window) {
   // this is an $httpInterceptor
