@@ -4,7 +4,8 @@ angular.module('shortly.services', [])
   // Your code here
   return {
     get:function(){
-
+      method: 'GET',
+      url: '/api/users/signedin'
     },
     post: function(link){
 
