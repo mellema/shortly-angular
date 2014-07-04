@@ -27,7 +27,7 @@ angular.module('shortly', [
 
     // Your code here
     .otherwise({
-      redirectTo: '/signin'
+      redirectTo: '/links'
     });
     // We add our $httpInterceptor into the array
     // of interceptors. Think of it like middleware for your ajax calls
